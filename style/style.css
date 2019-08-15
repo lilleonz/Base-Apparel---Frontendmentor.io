@@ -66,40 +66,36 @@ body {
 
 .base {
 	display: grid;
-	grid-template-areas: "logo" "container" "photo";
-	grid-template-rows: auto 1fr;
+	grid-template-areas: "logo" "coming-soon" "photo" "footer";
+	grid-template-rows: 1.5fr 1fr;
 	height: 100vh;
 }
 
 .logo {
 	grid-area: logo;
-	padding: 1rem 2rem;
+	padding: 16px 16px;
 	text-align: left;
 }
 
 .logolink {
 	display: inline-block;
-	padding: 1rem;
+	padding: 16px;
 }
-
-img {
-	height: 3.5rem;
-}
-
 
 /* Coming-soon */
 
 .coming-soon {
 	grid-area: coming-soon;
-	padding: 6rem 5rem;
+	padding: 8px 8px;
 }
 
 .title {
-	margin-bottom: 2.5rem;
+	font-weight: 600;
+	margin-bottom: 16px;
 	color: #413a3a;
-	font-size: 4rem;
-	letter-spacing: 1rem;
-	line-height: 1.15;
+	font-size: 16px;
+	letter-spacing: 16px;
+	line-height: 1;
 	text-transform: uppercase;
 }
 
@@ -111,9 +107,9 @@ img {
 
 .content {
 	color: #CE9797;
-	font-size: 1.6rem;
+	font-size: 18px;
 	line-height: 1.5;
-	margin-bottom: 4rem;
+	margin-bottom: 32px;
 }
 
 /* Email */
@@ -121,7 +117,7 @@ img {
 .email-input {
 	color: #CE9797;
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 1.6rem;
+	font-size: 16px;
 }
 
 .email-input::placeholder {
@@ -132,15 +128,15 @@ img {
 .email-form {
 	position: relative;
 	margin: 0 auto;
-	max-width: 36.2rem;
+	max-width: 575px;
 }
 
 .email-input {
 	width: 100%;
-	padding: 1.6rem 10rem 1.6rem 2rem;
+	padding: 16px 16px 16px 16px;
 	background: transparent;
 	border: 2px solid hsl(0, 6%, 24%, 0.1);
-	border-radius: 5rem;
+	border-radius: 80px;
 }
 .email-input:focus {
 	outline: none;
@@ -150,7 +146,7 @@ img {
 }
 .email-input:invalid {
 	background: url(/img/icon-error.svg) no-repeat;
-	background-position: top 1.1rem right 7rem;
+	background-position: top 18px right 112px;
 	border: 2px solid hsl(0, 93%, 68%);
 }
 .email-input:invalid + .form__warning {
@@ -160,12 +156,12 @@ img {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 6.5rem;
-	height: 5.1rem;
+	width: 104px;
+	height: 82px;
 	background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 	border: none;
-	border-radius: 5rem;
-	box-shadow: 0 1rem 2rem hsl(0, 6%, 24%, .25);
+	border-radius: 80px;
+	box-shadow: 0 16px 32px hsl(0, 6%, 24%, .25);
 }
 .email-submit:hover {
 	cursor: pointer;
@@ -176,24 +172,15 @@ img {
 .email-submit:focus,
 .email-submit:hover {
 	background-image: linear-gradient(135deg, hsl(0, 80%, 91%), hsl(0, 74%, 79%));
-	box-shadow: 0 1rem 2rem hsl(0, 6%, 24%, .5);
+	box-shadow: 0 16px 16px hsl(0, 6%, 24%, .5);
 }
-
-/* Photo */
-.photo {
-	grid-area: photo;
-	background-size: cover;
-	height: 25rem;
-}
-
-/* .photo {
-	background-image: url(/img/hero-desktop.jpg) no-repeat;
-} */
 
 /* Footer */
 
 footer {
-	position: ;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .attribution {
@@ -207,7 +194,101 @@ footer {
 
 /* Media Queries */
 
-@media (min-width: 768px) {
+
+@media (min-width: 1024px) {
+	body {
+		text-align: left;
+		background: url(/img/bg-pattern-desktop.svg) no-repeat;
+		background-size: 70% 100%;
+	}
+
+	.base {
+		grid-template-areas: "logo photo" "coming-soon photo";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1.5fr 1fr;
+	}
+
+	.coming-soon {
+		padding-left: 150px;
+		padding-right: 350px;	
+	}
+	.title {
+		font-size: 64px;
+	}
+
+	.logo {
+		grid-area: logo;
+		padding: 48px 80px;
+		text-align: left;
+	}
+
+	.logolink {
+		display: inline-block;
+		padding: 16px;
+	}
+
+	.logo img {
+		height: auto;
+		width: auto;
+	}
+
+	.photo {
+		grid-area: photo;
+		background-size: cover;
+		background-image: url(/img/hero-desktop.jpg);
+		height: 100vh;
+	}
+
+	.email-form {
+		position: relative;
+		margin: 0 auto;
+		max-width: 475px;
+	}
+	.email-input {
+	width: 100%;
+	padding: 16px;
+	padding-right: 160px;
+	background: transparent;
+	border: 2px solid rgba(65, 58, 58, 0.1);
+	border-radius: 80px;
+	}
+	.email-input:focus {
+	outline: none;
+	/* Show warning when the value in the input field is invalid */
+	}
+	.email-input:focus:not(:placeholder-shown) {
+	background: transparent;
+	}
+	.email-input:focus:invalid {
+	background: url(../images/icon-error.svg) no-repeat;
+	background-position: top 18px right 112px;
+	border: 2px solid #f96262;
+	}
+	.email-input:focus:invalid + .form__warning {
+	opacity: 1;
+	}
+	.email-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 96px;
+		height: 52px;
+		background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+		border: none;
+		border-radius: 80px;
+	}
+	.email-submit:hover {
+	cursor: pointer;
+	}
+	.email-submit:focus {
+	outline: none;
+	}
+	.email-submit:focus, .form__submit:hover {
+		background-image: linear-gradient(135deg, #fad6d6, #f1a2a2);
+	}
+}
+
+/* @media (min-width: 768px) {
 	body {
 		text-align: left;
 		background: url(/img/bg-pattern-desktop.svg) no-repeat;
@@ -222,13 +303,13 @@ footer {
 
 	.logo {
 		grid-area: logo;
-		padding: 1rem 2rem;
+		padding: 16px 70px;
 		text-align: left;
 	}
 
 	.logolink {
 		display: inline-block;
-		padding: 1rem;
+		padding: 16px;
 	}
 
 	.logo img {
@@ -237,92 +318,34 @@ footer {
 	}
 
 	.title {
-		font-size: 6rem;
+		font-size: 64px;
 	}
 
 	.photo {
 		grid-area: photo;
 		background-size: cover;
-		background-image: url(/img/hero-mobile.jpg);
-		height: 100%;
+		background-image: url(/img/hero-desktop.jpg);
+		height: 90%;
 	}
 
 	.coming-soon {
-		padding: 6rem 10rem;
+		padding-left: 150px;
+		padding-right: 300px;	
 	}
 
 	.email-form {
 		margin: 0;
-		max-width: 50rem;
+		max-width: 450px;
 	}
 	.email-input {
-		padding-right: 10rem;
+		padding-right: 160px;
 	}
 	.email-input:focus:invalid {
-		background-position: top 1.1rem right 9rem;
+		background-position: top 18px right 144;
 	}
 	.email-submit {
-		width: 8rem;
+		width: 96px;
 	}
 }
-
-@media (min-width: 1024px) {
-	.coming-soon {
-		padding: 6rem 20rem;
-	}
-	.title {
-		font-size: 8rem;
-	}
-
-	.logo {
-		padding: 3rem 20rem;
-	}
-
-	.email-form {
-		position: relative;
-		margin: 0 auto;
-		max-width: 36.2rem;
-	}
-	.email-input {
-	width: 100%;
-	padding: 1.6rem 10rem 1.6rem 2rem;
-	background: transparent;
-	border: 2px solid rgba(65, 58, 58, 0.1);
-	border-radius: 5rem;
-	}
-	.email-input:focus {
-	outline: none;
-	/* Show warning when the value in the input field is invalid */
-	}
-	.email-input:focus:not(:placeholder-shown) {
-	background: transparent;
-	}
-	.email-input:focus:invalid {
-	background: url(../images/icon-error.svg) no-repeat;
-	background-position: top 1.1rem right 7rem;
-	border: 2px solid #f96262;
-	}
-	.email-input:focus:invalid + .form__warning {
-	opacity: 1;
-	}
-	.email-submit {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 6.5rem;
-		height: 5.1rem;
-		background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
-		border: none;
-		border-radius: 5rem;
-	}
-	.email-submit:hover {
-	cursor: pointer;
-	}
-	.email-submit:focus {
-	outline: none;
-	}
-	.email-submit:focus, .form__submit:hover {
-		background-image: linear-gradient(135deg, #fad6d6, #f1a2a2);
-	}
-}
+ */
 
