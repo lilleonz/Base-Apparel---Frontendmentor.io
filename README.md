@@ -9,7 +9,8 @@ This is a project for my portfolio for solo curriculum for [Microverse](https://
 #### [View in broswer](https://lilleonz.github.io/Base-Apparel---Frontendmentor.io/)
 
 #### Live ScreenShot of the page
-![ScreenShot]()
+![ScreenShot](./img/mobile-design.jpg)
+![ScreenShot](./img/desktop-preview.jpg)
 
 
 #### Authors
