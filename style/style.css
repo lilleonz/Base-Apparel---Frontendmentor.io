@@ -199,7 +199,7 @@ footer {
 	.base {
 		grid-template-areas: "logo" "photo" "coming-soon";
 		grid-template-rows: auto;
-		grid-template-columns: 1fr;
+		grid-template-columns: auto;
 	}
 
 	.logo {
@@ -299,7 +299,7 @@ footer {
 	}
 }
 
-@media (min-width: 960px) {
+@media (min-width: 720px) {
 	body {
 		text-align: left;
 		background: url(/img/bg-pattern-desktop.svg) no-repeat;
@@ -313,6 +313,7 @@ footer {
 	}
 
 	.coming-soon {
+		margin-top: 138px;
 		padding-left: 150px;
 		padding-right: 350px;	
 	}
@@ -322,7 +323,7 @@ footer {
 
 	.logo {
 		grid-area: logo;
-		padding: 48px 80px;
+		padding: 64px 68px;
 		text-align: left;
 	}
 
@@ -338,7 +339,7 @@ footer {
 
 	.photo {
 		grid-area: photo;
-		background-size: cover;
+		background-size: contain;
 		background-image: url(/img/hero-desktop.jpg);
 		height: 100vh;
 	}
