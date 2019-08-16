@@ -145,7 +145,7 @@ body {
 	background: transparent;
 }
 .email-input:invalid {
-	background: url(/img/icon-error.svg) no-repeat;
+	background: url(./img/icon-error.svg) no-repeat;
 	background-position: top 18px right 112px;
 	border: 2px solid hsl(0, 93%, 68%);
 }
@@ -220,7 +220,7 @@ footer {
 	.photo {
 		position: relative;
 		grid-area: photo;
-		background: url(/img/hero-mobile.jpg);
+		background: url(./img/hero-mobile.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 32vh;
@@ -271,7 +271,7 @@ footer {
 		background: transparent;
 	}
 	.email-input:focus:invalid {
-		background: url(../images/icon-error.svg) no-repeat;
+		background: url(./images/icon-error.svg) no-repeat;
 		background-position: top 18px right 112px;
 		border: 2px solid #f96262;
 	}
@@ -302,7 +302,7 @@ footer {
 @media (min-width: 720px) {
 	body {
 		text-align: left;
-		background: url(/img/bg-pattern-desktop.svg) no-repeat;
+		background: url(./img/bg-pattern-desktop.svg) no-repeat;
 		background-size: 70% 100%;
 	}
 
@@ -340,7 +340,7 @@ footer {
 	.photo {
 		grid-area: photo;
 		background-size: contain;
-		background-image: url(/img/hero-desktop.jpg);
+		background-image: url(./img/hero-desktop.jpg);
 		height: 100vh;
 	}
 
@@ -365,7 +365,7 @@ footer {
 		background: transparent;
 	}
 	.email-input:focus:invalid {
-		background: url(../images/icon-error.svg) no-repeat;
+		background: url(./images/icon-error.svg) no-repeat;
 		background-position: top 18px right 112px;
 		border: 2px solid #f96262;
 	}
