@@ -341,6 +341,7 @@ footer {
 		grid-area: photo;
 		background-size: contain;
 		background: url(../img/hero-desktop.jpg);
+		background-repeat: no-repeat;
 		height: 100vh;
 	}
 
