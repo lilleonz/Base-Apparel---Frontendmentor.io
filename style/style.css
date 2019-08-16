@@ -194,49 +194,60 @@ footer {
 
 /* Media Queries */
 
-
-@media (min-width: 1024px) {
-	body {
-		text-align: left;
-		background: url(/img/bg-pattern-desktop.svg) no-repeat;
-		background-size: 70% 100%;
-	}
+@media screen and (min-width: 300px) {
 
 	.base {
-		grid-template-areas: "logo photo" "coming-soon photo";
-		grid-template-rows: auto 1fr;
-		grid-template-columns: 1.5fr 1fr;
-	}
-
-	.coming-soon {
-		padding-left: 150px;
-		padding-right: 350px;	
-	}
-	.title {
-		font-size: 64px;
+		grid-template-areas: "logo" "photo" "coming-soon";
+		grid-template-rows: auto;
+		grid-template-columns: auto;
 	}
 
 	.logo {
 		grid-area: logo;
-		padding: 48px 80px;
+		padding: 8px 8px;
 		text-align: left;
-	}
-
-	.logolink {
-		display: inline-block;
-		padding: 16px;
+		height: 36px;
 	}
 
 	.logo img {
-		height: auto;
-		width: auto;
+		height: 36px;
+	}
+
+	a .logolink {
+		padding: 4px;
 	}
 
 	.photo {
+		position: relative;
 		grid-area: photo;
+		background: url(/img/hero-mobile.jpg);
+		background-repeat: no-repeat;
 		background-size: cover;
-		background-image: url(/img/hero-desktop.jpg);
-		height: 100vh;
+		height: 32vh;
+		width: 100vw;
+	}
+
+	.coming-soon {
+		grid-area: coming-soon;
+		padding-left: 32px;
+		padding-right: 32px;	
+	}
+
+	.title {
+		font-weight: 600;
+		margin-bottom: 16px;
+		color: #413a3a;
+		font-size: 32px;
+		letter-spacing: 16px;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.content {
+		color: #CE9797;
+		font-size: 14px;
+		line-height: 1.5;
+		margin-bottom: 32px;
 	}
 
 	.email-form {
@@ -245,27 +256,27 @@ footer {
 		max-width: 475px;
 	}
 	.email-input {
-	width: 100%;
-	padding: 16px;
-	padding-right: 160px;
-	background: transparent;
-	border: 2px solid rgba(65, 58, 58, 0.1);
-	border-radius: 80px;
+		width: 100%;
+		padding: 16px;
+		padding-right: 160px;
+		background: transparent;
+		border: 2px solid rgba(65, 58, 58, 0.1);
+		border-radius: 80px;
 	}
 	.email-input:focus {
-	outline: none;
+		outline: none;
 	/* Show warning when the value in the input field is invalid */
 	}
 	.email-input:focus:not(:placeholder-shown) {
-	background: transparent;
+		background: transparent;
 	}
 	.email-input:focus:invalid {
-	background: url(../images/icon-error.svg) no-repeat;
-	background-position: top 18px right 112px;
-	border: 2px solid #f96262;
+		background: url(../images/icon-error.svg) no-repeat;
+		background-position: top 18px right 112px;
+		border: 2px solid #f96262;
 	}
 	.email-input:focus:invalid + .form__warning {
-	opacity: 1;
+		opacity: 1;
 	}
 	.email-submit {
 		position: absolute;
@@ -288,7 +299,7 @@ footer {
 	}
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 720px) {
 	body {
 		text-align: left;
 		background: url(/img/bg-pattern-desktop.svg) no-repeat;
@@ -301,9 +312,18 @@ footer {
 		grid-template-columns: 1.5fr 1fr;
 	}
 
+	.coming-soon {
+		margin-top: 138px;
+		padding-left: 150px;
+		padding-right: 350px;	
+	}
+	.title {
+		font-size: 64px;
+	}
+
 	.logo {
 		grid-area: logo;
-		padding: 16px 70px;
+		padding: 64px 68px;
 		text-align: left;
 	}
 
@@ -317,35 +337,58 @@ footer {
 		width: auto;
 	}
 
-	.title {
-		font-size: 64px;
-	}
-
 	.photo {
 		grid-area: photo;
-		background-size: cover;
+		background-size: contain;
 		background-image: url(/img/hero-desktop.jpg);
-		height: 90%;
-	}
-
-	.coming-soon {
-		padding-left: 150px;
-		padding-right: 300px;	
+		height: 100vh;
 	}
 
 	.email-form {
-		margin: 0;
-		max-width: 450px;
+		position: relative;
+		margin: 0 auto;
+		max-width: 475px;
 	}
 	.email-input {
+		width: 100%;
+		padding: 16px;
 		padding-right: 160px;
+		background: transparent;
+		border: 2px solid rgba(65, 58, 58, 0.1);
+		border-radius: 80px;
+	}
+	.email-input:focus {
+		outline: none;
+	/* Show warning when the value in the input field is invalid */
+	}
+	.email-input:focus:not(:placeholder-shown) {
+		background: transparent;
 	}
 	.email-input:focus:invalid {
-		background-position: top 18px right 144;
+		background: url(../images/icon-error.svg) no-repeat;
+		background-position: top 18px right 112px;
+		border: 2px solid #f96262;
+	}
+	.email-input:focus:invalid + .form__warning {
+		opacity: 1;
 	}
 	.email-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
 		width: 96px;
+		height: 52px;
+		background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+		border: none;
+		border-radius: 80px;
+	}
+	.email-submit:hover {
+	cursor: pointer;
+	}
+	.email-submit:focus {
+	outline: none;
+	}
+	.email-submit:focus, .form__submit:hover {
+		background-image: linear-gradient(135deg, #fad6d6, #f1a2a2);
 	}
 }
- */
-
